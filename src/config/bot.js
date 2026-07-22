@@ -24,7 +24,22 @@ export const botConfig = {
     activities: [
       {
         name: "Custom Status", // required by Discord API, not shown in the client
-        state: "stalking",     // this is what people actually see
+        state: "const activities = [
+  { name: '/play', type: ActivityType.Listening },
+  { name: '100+ servers', type: ActivityType.Watching },
+  { name: 'Football Legends', type: ActivityType.Playing },
+];
+
+let i = 0;
+
+setInterval(() => {
+  client.user.setActivity(
+    activities[i].name,
+    { type: activities[i].type }
+  );
+
+  i = (i + 1) % activities.length;
+}, 10000); // every 10 seconds",     // this is what people actually see
         type: 4,               // Custom
       },
     ],
